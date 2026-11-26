@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cvyyoiwx3pfuy"]
+
+[ext_resource type="Script" uid="uid://dwjv4ilkw3eui" path="res://Nodes/Player/player.gd" id="1_65o2i"]
+[ext_resource type="Texture2D" uid="uid://cxb2k40t7630h" path="res://icon.svg" id="2_us8wf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4kxuq"]
+radius = 53.88
+height = 156.53
+
+[node name="Player" type="Node2D" unique_id=1107915572]
+
+[node name="RapierCharacterBody2D" type="CharacterBody2D" parent="." unique_id=1700937740]
+script = ExtResource("1_65o2i")
+metadata/_custom_type_script = "uid://c5qpdmvd63ugb"
+
+[node name="Sprite2D" type="Sprite2D" parent="RapierCharacterBody2D" unique_id=1913170350]
+texture = ExtResource("2_us8wf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RapierCharacterBody2D" unique_id=1414680967]
+shape = SubResource("CapsuleShape2D_4kxuq")
+debug_color = Color(0.16290295, 0.6446418, 0, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="RapierCharacterBody2D" unique_id=1401696725]
+position_smoothing_enabled = true
